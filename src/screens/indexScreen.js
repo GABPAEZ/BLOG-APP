@@ -10,7 +10,7 @@ import {
 import { Context } from "../context/BlogContext";
 import { Entypo } from "@expo/vector-icons";
 
-const indexScreen = () => {
+const indexScreen = ({ navigation }) => {
   //llamamos al valor value pasado en el context para mostrarlo en esta pantalla
   const { state, addBlogPost, deletePost } = useContext(Context);
 
@@ -18,20 +18,23 @@ const indexScreen = () => {
     <View>
       {/* <Text>Index Screen Page</Text> */}
       <Button title="Add Blog Post" onPress={addBlogPost} />
-
       <FlatList
         data={state}
         keyExtractor={blogPost => blogPost.title}
         renderItem={({ item }) => {
           return (
-            <View style={styles.row}>
-              <Text style={styles.text}>
-                {item.title} - {item.id}
-              </Text>
-              <TouchableOpacity onPress={() => deletePost(item.id)}>
-                <Entypo style={styles.avatar} name="trash" />
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Show", { id: item.id })}
+            >
+              <View style={styles.row}>
+                <Text style={styles.text}>
+                  {item.title} - {item.id}
+                </Text>
+                <TouchableOpacity onPress={() => deletePost(item.id)}>
+                  <Entypo style={styles.avatar} name="trash" />
+                </TouchableOpacity>
+              </View>
+            </TouchableOpacity>
           );
         }}
       />
