@@ -27,6 +27,7 @@ Yarn start o NPM start
 ## Preview 📌
 
 ![](assets/preview1.jpg)
+![](assets/preview2.jpg)
 
 ## Autores ✒️
 
