@@ -17,7 +17,7 @@ const indexScreen = ({ navigation }) => {
   return (
     <View>
       {/* <Text>Index Screen Page</Text> */}
-      <Button title="Add Blog Post" onPress={addBlogPost} />
+      {/* <Button title="Add Blog Post" onPress={addBlogPost} /> */}
       <FlatList
         data={state}
         keyExtractor={blogPost => blogPost.title}
@@ -42,6 +42,18 @@ const indexScreen = ({ navigation }) => {
   );
 };
 
+// para colocar el icono de agregar
+
+indexScreen.navigationOptions = ({navigation}) => {
+  return {
+    headerRight: () => (
+      <TouchableOpacity onPress={()=> navigation.navigate('Create')}>
+        <Entypo name="circle-with-plus" size={30} color={"white"} />
+      </TouchableOpacity>
+    )
+  };
+};
+
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
@@ -56,6 +68,9 @@ const styles = StyleSheet.create({
   },
   avatar: {
     fontSize: 18
+  },
+  plus: {
+    fontSize: 21
   }
 });
 
