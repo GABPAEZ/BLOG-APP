@@ -28,7 +28,9 @@ Yarn start o NPM start
 
 ![](assets/preview1.jpg)
 ![](assets/preview2.jpg)
-
+![](assets/preview_edit.jpg)
+![](assets/preview_add.jpg)
+![](assets/preview_edit_post.jpg)
 ## Autores ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
